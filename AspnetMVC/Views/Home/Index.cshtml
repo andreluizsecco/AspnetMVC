@@ -1,0 +1,20 @@
+﻿@model IEnumerable<AspnetMVC.Models.Livro>
+@{
+    ViewBag.Title = "Livros";
+}
+
+<h2>Livros Cadastrados</h2>
+<br />
+@Html.ActionLink("Novo Livro", "NovoLivro", "Home")
+<br /><br />
+<ul>
+    @foreach (var item in Model)
+    {
+        <li style="padding-bottom: 10px">
+            @Html.DisplayFor(m => item.ID)<span>. </span>
+            @Html.ActionLink(item.Titulo, "EditarLivro", "Home", new { @id = item.ID }, null)<span>, </span>
+            @Html.DisplayFor(m => item.Autor) <span> - </span>
+            @Html.DisplayFor(m => item.AnoPublicacao)
+        </li>
+    }
+</ul>

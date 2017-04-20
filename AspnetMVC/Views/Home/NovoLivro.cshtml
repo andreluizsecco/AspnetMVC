@@ -1,0 +1,39 @@
+﻿@model AspnetMVC.Models.Livro
+@{
+    ViewBag.Title = "Novo Livro";
+}
+
+<h2>Novo Livro</h2>
+@using (Html.BeginForm("InserirLivro", "Home", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(x => x.ID)<span>: </span>
+        @Html.EditorFor(x => x.ID)
+        @Html.ValidationMessageFor(x => x.ID)
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x => x.Titulo)<span>: </span>
+        @Html.EditorFor(x => x.Titulo)
+        @Html.ValidationMessageFor(x => x.Titulo)
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x => x.Autor)<span>: </span>
+        @Html.EditorFor(x => x.Autor)
+        @Html.ValidationMessageFor(x => x.Autor)
+    </div>
+    <br />
+    <div>
+        @Html.LabelFor(x => x.AnoPublicacao)<span>: </span>
+        @Html.EditorFor(x => x.AnoPublicacao)
+        @Html.ValidationMessageFor(x => x.AnoPublicacao)
+    </div>
+    <br />
+    <div>
+        <input type="submit" value="Salvar" />
+        <a href="/">Voltar</a>
+    </div>
+}
+<script src="~/Scripts/jquery.validate.js"></script>
+
